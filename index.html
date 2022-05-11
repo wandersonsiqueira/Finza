@@ -1,0 +1,571 @@
+
+<!doctype html>
+  <html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.88.1">
+    <title>Gestor</title>
+
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+
+
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+    <!-- Favicons -->
+    <link rel="apple-touch-icon" href="/docs/5.1/assets/img/favicons/apple-touch-icon.png" sizes="180x180">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon-16x16.png" sizes="16x16" type="image/png">
+    <link rel="manifest" href="/docs/5.1/assets/img/favicons/manifest.json">
+    <link rel="mask-icon" href="/docs/5.1/assets/img/favicons/safari-pinned-tab.svg" color="#4caf50">
+    <link rel="icon" href="/docs/5.1/assets/img/favicons/favicon.ico">
+    <meta name="theme-color" content="#4caf50">
+
+
+    <style>
+      body{
+        background: #F7F7F7;
+        font-family: font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" sans-serif;
+        font-size: 17px;
+        line-height: 1.47059;
+        font-weight: 500;
+        letter-spacing: .0009rem;
+      }
+      h1, .h1, h2, .h2 {
+        letter-spacing: -.039rem;
+      }
+      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, button, .btn {
+        font-weight: 600;
+      }
+      body, input, textarea, select, button, html, h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, span {
+        font-synthesis: none;
+        -moz-font-feature-settings: 'kern';
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        direction: ltr;
+        text-align: left;
+      }
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+      .bg-transparent {
+        background: transparent!important; 
+      }
+      .sidebar {
+        box-shadow: inset -1px 0 0 rgb(0 0 0 / 0%) !important;
+      }
+      .fw-medium {
+        font-weight: 500 !important;
+      }
+      .text-muted{
+        color: #C5C5C5;
+      }
+      .rounded-xl{
+        border-radius: 8px !important;
+      }
+      .dropdown-menu-macos {
+        display: grid;
+        gap: 0.25rem;
+        padding: 0.5rem;
+        border-radius: 0.5rem;
+      }
+      .font-weight-bolder, .font-weight-bold {
+        font-weight: 700!important;
+      }
+      .text-sm {
+        font-size: .875rem!important;
+      }
+      .text-sm {
+        line-height: 1.5;
+      }
+
+      .text-xs {
+        font-size: .775rem!important;
+      }
+
+
+
+
+
+      body {
+        overflow: hidden; 
+      }
+
+/* ini: Preloader */
+
+#preloader {
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background-color:#6FD30B; /* cor do background que vai ocupar o body */
+  z-index:999; /* z-index para jogar para frente e sobrepor tudo */
+}
+#preloader .inner {
+  position: absolute;
+  top: 50%; /* centralizar a parte interna do preload (onde fica a animação)*/
+  left: 50%;
+  transform: translate(-50%, -50%);  
+}
+.bolas > div {
+  display: inline-block;
+  background-color: #fff;
+  width: 17px;
+  height: 17px;
+  border-radius: 100%;
+  margin: 3px;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  animation-name: animarBola;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+
+}
+.bolas > div:nth-child(1) {
+  animation-duration:0.75s ;
+  animation-delay: 0;
+}
+.bolas > div:nth-child(2) {
+  animation-duration: 0.75s ;
+  animation-delay: 0.12s;
+}
+.bolas > div:nth-child(3) {
+  animation-duration: 0.75s  ;
+  animation-delay: 0.24s;
+}
+
+@keyframes animarBola {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+  16% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 0.7;
+  }
+  33% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1; 
+  } 
+}
+/* end: Preloader */
+</style>
+
+
+<!-- Custom styles for this template -->
+<link href="https://getbootstrap.com/docs/5.1/examples/dashboard/dashboard.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- início do preloader -->
+  <div id="preloader">
+    <div class="inner">
+     <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
+     <div class="bolas">
+      <div></div>
+      <div></div>
+      <div></div>                    
+    </div>
+  </div>
+</div>
+<!-- fim do preloader --> 
+
+<div class="container-fluid">
+  <div class="row">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-transparent sidebar collapse pt-2">
+      <div class="position-sticky">
+        <div class="p-3">
+          <div class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+              <img src="https://avatars.githubusercontent.com/u/37407338?v=4" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong>Wanderson</strong>
+            </a>
+            <ul class="dropdown-menu mx-0 shadow border-0 rounded-xl p-2" style="width: 200px;">
+              <li>
+                <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#files"></use></svg>
+                  Documents
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#image-fill"></use></svg>
+                  Photos
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#film"></use></svg>
+                  Movies
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#music-note-beamed"></use></svg>
+                  Music
+                </a>
+              </li>
+              <li>
+                <a class="dropdown-item d-flex gap-2 align-items-center rounded" href="#">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#joystick"></use></svg>
+                  Games
+                </a>
+              </li>
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <a class="dropdown-item dropdown-item-danger d-flex gap-2 align-items-center rounded" href="#">
+                  <svg class="bi" width="16" height="16"><use xlink:href="#trash"></use></svg>
+                  Trash
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <ul class="nav flex-column mt-4">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">
+              <i class="bi bi-house"></i>
+              Painel
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-file-earmark-text"></i>
+              Extrato
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-cart"></i>
+              Compras recentes
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-layers"></i>
+              Contas a pagar
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-graph-up"></i>
+              Relatórios
+            </a>
+          </li>
+        </ul>
+
+        <h6 class="sidebar-heading d-flex justify-content-between align-items-center px-3 mt-4 mb-1 text-muted">
+          <span>Relatórios salvos</span>
+          <a class="link-secondary" href="#" aria-label="Add a new report">
+            <i data-feather="plus-circle"></i>
+          </a>
+        </h6>
+        <ul class="nav flex-column mb-2">
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-diagram-2"></i>
+              Este mês
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-diagram-2"></i>
+              Mês passado
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <i class="bi bi-diagram-2"></i>
+              Este ano
+            </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-0 px-md-4 py-3">
+
+      <div class="container-fluid my-4">
+        <div class="row">
+          <div class="col-6 col-md-6">
+            <h2 class="fw-bold">
+              <span class="text-muted">Bom dia, </span>
+              Wanderson
+            </h2>
+          </div>
+          <div class="col-6">
+            <div class="dropdown d-none">
+              <button class="btn btn-outline-secondary dropdown-toggle rounded-xl" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                This month
+              </button>
+              <ul class="dropdown-menu mx-0 shadow border-0 rounded-xl p-2" aria-labelledby="dropdownMenuButton1">
+                <li><a class="dropdown-item rounded-xl" href="#">Action</a></li>
+                <li><a class="dropdown-item rounded-xl" href="#">Another action</a></li>
+                <li><a class="dropdown-item rounded-xl" href="#">Something else here</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid my-4">
+        <div class="row">
+          <div class="col-12 col-md-8">
+            <div class="card p-3 border-0 shadow-sm rounded-xl h-100">
+              <div class="card-body">
+
+                <div class="row">
+                  <div class="col-12 col-md-6">
+                    <h6 class="fw-normal text-muted mb-1 fw-medium" style="font-size:15px;">Saldo acumulado</h6>
+                    <h2 class="fw-normal h1"><span class="h5 fw-normal">R$</span> 10.167,00</h2>
+                    <h6 class="fw-normal d-none" style="font-size: 15px;font-family: C6 Sans Display;"><svg fill="#979797" xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="12"><path d="M5.5,21A2.5,2.5,0,0,1,3,18.5V1.5A1.5,1.5,0,0,0,1.5,0h0A1.5,1.5,0,0,0,0,1.5v17A5.5,5.5,0,0,0,5.5,24h17A1.5,1.5,0,0,0,24,22.5h0A1.5,1.5,0,0,0,22.5,21Z"></path><path d="M19.5,18A1.5,1.5,0,0,0,21,16.5v-6a1.5,1.5,0,0,0-3,0v6A1.5,1.5,0,0,0,19.5,18Z"></path><path d="M7.5,18A1.5,1.5,0,0,0,9,16.5v-6a1.5,1.5,0,0,0-3,0v6A1.5,1.5,0,0,0,7.5,18Z"></path><path d="M13.5,18A1.5,1.5,0,0,0,15,16.5V5.5a1.5,1.5,0,0,0-3,0v11A1.5,1.5,0,0,0,13.5,18Z"></path></svg> <span class="text-success font-weight-bolder">+R$ 167,00</span> acumulado bruto</h6>
+                    <h6 class="fw-normal" style="font-size: 15px;"><svg style="margin-top: -1px;" fill="#979797" xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="12"><path d="M5.5,21A2.5,2.5,0,0,1,3,18.5V1.5A1.5,1.5,0,0,0,1.5,0h0A1.5,1.5,0,0,0,0,1.5v17A5.5,5.5,0,0,0,5.5,24h17A1.5,1.5,0,0,0,24,22.5h0A1.5,1.5,0,0,0,22.5,21Z"></path><path d="M19.5,18A1.5,1.5,0,0,0,21,16.5v-6a1.5,1.5,0,0,0-3,0v6A1.5,1.5,0,0,0,19.5,18Z"></path><path d="M7.5,18A1.5,1.5,0,0,0,9,16.5v-6a1.5,1.5,0,0,0-3,0v6A1.5,1.5,0,0,0,7.5,18Z"></path><path d="M13.5,18A1.5,1.5,0,0,0,15,16.5V5.5a1.5,1.5,0,0,0-3,0v11A1.5,1.5,0,0,0,13.5,18Z"></path></svg> entrou <span class="text-success font-weight-bolder">+R$ 1.361,00</span> a mais este mês</h6>
+                  </div>
+
+                  <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
+                    <button class="rounded-xl btn py-2 px-md-3" style="background:#f5f5f5;">
+                      <p>💰</p>
+                      <p class="text-sm mb-0 fw-bold">Adicionar<br>
+                      entrada</p>
+                    </button>
+                    <button class="rounded-xl btn py-2 px-md-3" style="background:#f5f5f5;">
+                      <p>💸</p>
+                      <p class="text-sm mb-0 fw-bold">Cadastrar<br>
+                      despesa</p>
+                    </button>
+                    <button class="rounded-xl btn py-2 px-md-3" style="background:#f5f5f5;">
+                      <p>💳</p>
+                      <p class="text-sm mb-0 fw-bold">Compra<br>parcelada</p>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-8 mt-3 d-none">
+            <div class="card p-3 border-0 shadow-sm rounded-xl h-100">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-12 col-md-4">
+                    <p class="text-sm text-muted mb-1 font-weight-bold">Invoiced this month</p>
+                    <h5 class="font-weight-bolder mb-1">
+                      $125,927.21
+                      <span class="text-success text-sm font-weight-bolder">+55%</span>
+                    </h5>
+                    <p class="text-sm text-muted mb-0 font-weight-bold mb-1">R$25,254 more</p>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <p class="text-sm text-muted mb-1 font-weight-bold">Invoiced this month</p>
+                    <h5 class="font-weight-bolder mb-1">
+                      $125,927.21
+                      <span class="text-success text-sm font-weight-bolder">+55%</span>
+                    </h5>
+                    <p class="text-sm text-muted mb-0 font-weight-bold mb-1">R$25,254 more</p>
+                  </div>
+                  <div class="col-12 col-md-4">
+                    <p class="text-sm text-muted mb-1 font-weight-bold">Invoiced this month</p>
+                    <h5 class="font-weight-bolder mb-1">
+                      $125,927.21
+                      <span class="text-success text-sm font-weight-bolder">+55%</span>
+                    </h5>
+                    <p class="text-sm text-muted mb-0 font-weight-bold mb-1">R$25,254 more</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid my-4">
+        <div class="row g-3">
+          <div class="col-12 col-md-4">
+            <div class="card p-2 border-0 shadow-sm rounded-xl h-100">
+              <div class="card-header border-0 text-muted bg-white rounded-xl pt-2 pl-3">
+                <div class="d-flex justify-content-between">
+                  <h4 class="text-sm text-uppercase">Entradas</h4> 
+                  <a class="link-secondary text-right fs-6" href="#" aria-label="Add a new report">
+                    <i class="bi bi-plus-circle"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row g-2">
+                  <div class="col-12 m-0">
+                    <p class="text-sm text-muted mb-2 fw-medium">Recebimentos registrados</p>
+                    <h5 class="font-weight-bolder mb-1">
+                      <svg style="margin-top:-4px;" fill="#4caf50" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24"><path d="M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,22A10,10,0,1,1,22,12,10.011,10.011,0,0,1,12,22Zm4.243-10.243,1.414,1.414-4.243,4.243a2,2,0,0,1-2.828,0L6.343,13.171l1.414-1.414L11,15V6h2v9Z"/></svg> R$ 25.072,64
+                      <span class="text-success text-sm font-weight-bolder d-none">+55%</span>
+                    </h5>
+                    <p class="text-xs text-muted fw-medium mt-2 mb-0">Você pode começar a investir <strong>R$ 1.155</strong> a mais todo mês a aprtir de hoje.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-4">
+            <div class="card p-2 border-0 shadow-sm rounded-xl h-100">
+              <div class="card-header border-0 text-muted bg-white rounded-xl pt-2 pl-3">
+                <div class="d-flex justify-content-between">
+                  <h4 class="text-sm text-uppercase">Despesas</h4> 
+                  <a class="link-secondary text-right fs-6" href="#" aria-label="Add a new report">
+                    <i class="bi bi-plus-circle"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body">
+                <div class="row g-2">
+                  <div class="col-12 m-0">
+                    <p class="text-sm text-muted mb-2 fw-medium">Contas fixas</p>
+                    <h5 class="font-weight-bolder mb-1">
+                      <svg style="margin-top:-4px;" fill="#cc2b1f" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg" id="arrow-circle-down" viewBox="0 0 24 24"><path d="M12,24A12,12,0,1,0,0,12,12.013,12.013,0,0,0,12,24ZM12,2A10,10,0,1,1,2,12,10.011,10.011,0,0,1,12,2ZM7.757,12.243,6.343,10.829l4.243-4.243a2,2,0,0,1,2.828,0l4.243,4.243-1.414,1.414L13,9v9H11V9Z"/></svg> R$ 15.927,21
+                      <span class="text-success text-sm font-weight-bolder d-none">+55%</span>
+                    </h5>
+                    <p class="text-xs text-muted fw-medium mt-2 mb-0">Oba, uma redução de <strong>R$ 3.850</strong> comparado ao mês passado nas suas despesas.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container-fluid my-3">
+        <div class="row g-3">
+          <div class="col-12 col-md-5">
+            <div class="card border-0 shadow-sm rounded-xl h-100">
+              <div class="card-header border-0 text-muted bg-white rounded-xl pt-3 px-4">
+                <div class="d-flex justify-content-between">
+                  <h4 class="text-sm text-uppercase">Financiamentos</h4> 
+                  <a class="link-secondary text-right fs-6" href="#" aria-label="Add a new report">
+                    <i class="bi bi-plus-circle"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="row g-2">
+                  <div class="col-12 m-0">
+
+                    <div class="col-md-12 my-4 p-2">
+                      <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Renault Sandero</h6>
+                      <span class="fs-4 fw-bold"> R$ 575,99 <small class="text-sm text-muted">vence em 10 dias</small></span>
+                      <div class="progress mt-2" style="height: 10px; margin-bottom: 0;border-radius: 100px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-1">
+                        <small class="text-left text-uppercase text-muted text-xs">Pago R$ 2.875,99</small>
+                        <small class="text-right text-uppercase text-muted text-xs">Total R$ 28.325,00</small>
+                      </div>
+                    </div>
+
+                    <hr class="my-0 mx-2" style="opacity: .04;">
+
+                    <div class="col-md-12 my-4 p-2">
+                      <h6 class="mb-2 text-muted"><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z"/></svg> Apartamento</h6>
+                      <span class="fs-4 fw-bold"> R$ 320,76 <small class="text-sm text-muted">vence em 25 dias</small></span>
+                      <div class="progress mt-2" style="height: 10px; margin-bottom: 0;border-radius: 100px;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 22%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex justify-content-between mt-1">
+                        <small class="text-left text-uppercase text-muted text-xs">Pago R$ 20.875,99</small>
+                        <small class="text-right text-uppercase text-muted text-xs">Total R$ 109.999,00</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card-footer border-0 text-muted" style="font-size:12px;">
+                Você terminará um dos financiamentos em 45 meses.<br>
+                <a href="" class="" style="text-decoration: none;color: green;">Vamos planejar adiantar algumas parcelas <i class="bi bi-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-3">
+            <div class="card border-0 shadow-sm rounded-xl h-100">
+              <div class="card-header border-0 text-muted bg-white rounded-xl pt-3 px-4">
+                <div class="d-flex justify-content-between">
+                  <h4 class="text-sm text-uppercase">Meus limites</h4> 
+                  <a class="link-secondary text-right fs-6" href="#" aria-label="Add a new report">
+                    <i class="bi bi-plus-circle"></i>
+                  </a>
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="row g-2">
+                  <div class="col-12 m-0">
+
+                    <div class="col-md-12 my-4 p-2">
+                      <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Lazer</h6>
+                      <div class="progress mt-2" style="height: 8px; margin-bottom: 0;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <small class="text-left text-uppercase text-muted text-xs">R$ 00,00 usado</small>
+                        <small class="text-right text-uppercase text-muted text-xs">Dispo. R$ 1.200,00</small>
+                      </div>
+                    </div>
+
+                    <hr class="my-0 mx-2" style="opacity: .04;">
+
+                    <div class="col-md-12 my-4 p-2">
+                      <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Lazer</h6>
+                      <div class="progress mt-2" style="height: 4px; margin-bottom: 0;">
+                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
+                      </div>
+                      <div class="d-flex justify-content-between">
+                        <small class="text-left text-uppercase text-muted text-xs">R$ 00,00 usado</small>
+                        <small class="text-right text-uppercase text-muted text-xs">Dispo. R$ 1.200,00</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </main>
+  </div>
+</div>
+
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha384-zNy6FEbO50N+Cg5wap8IKA4M/ZnLJgzc6w2NqACZaK0u0FXfOWRRJOnQtpZun8ha" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<script type="text/javascript">
+  $(window).on('load', function () {
+    $('#preloader .inner').fadeOut();
+    $('#preloader').delay(150).fadeOut('slow'); 
+    $('body').delay(150).css({'overflow': 'visible'});
+  })
+</script>
+
+</body>
+</html>
