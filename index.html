@@ -15,6 +15,7 @@
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 
     <!-- Favicons -->
@@ -29,12 +30,15 @@
 
     <style>
       body{
-        background: #F7F7F7;
+        background: #EDEDED;
         font-family: font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" sans-serif;
         font-size: 17px;
         line-height: 1.47059;
         font-weight: 500;
         letter-spacing: .0009rem;
+      }
+      a {
+        color: #4C9A62;
       }
       h1, .h1, h2, .h2 {
         letter-spacing: -.039rem;
@@ -168,6 +172,10 @@
   } 
 }
 /* end: Preloader */
+
+:root {
+  --animate-delay: 0.5s;
+}
 </style>
 
 
@@ -328,7 +336,7 @@
         </div>
       </div>
 
-      <div class="container-fluid my-4">
+      <div class="container-fluid my-4 animate__animated animate__fadeInUp animate__delay-1s">
         <div class="row">
           <div class="col-12 col-md-8">
             <div class="card p-3 border-0 shadow-sm rounded-xl h-100">
@@ -401,7 +409,7 @@
 
       <div class="container-fluid my-4">
         <div class="row g-3">
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
             <div class="card p-2 border-0 shadow-sm rounded-xl h-100">
               <div class="card-header border-0 text-muted bg-white rounded-xl pt-2 pl-3">
                 <div class="d-flex justify-content-between">
@@ -425,7 +433,7 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-4">
+          <div class="col-12 col-md-4 animate__animated animate__fadeInUp animate__delay-1s">
             <div class="card p-2 border-0 shadow-sm rounded-xl h-100">
               <div class="card-header border-0 text-muted bg-white rounded-xl pt-2 pl-3">
                 <div class="d-flex justify-content-between">
@@ -455,7 +463,7 @@
 
       <div class="container-fluid my-3">
         <div class="row g-3">
-          <div class="col-12 col-md-5">
+          <div class="col-12 col-md-5 animate__animated animate__fadeInUp animate__delay-1s">
             <div class="card border-0 shadow-sm rounded-xl h-100">
               <div class="card-header border-0 text-muted bg-white rounded-xl pt-3 px-4">
                 <div class="d-flex justify-content-between">
@@ -469,7 +477,7 @@
                 <div class="row g-2">
                   <div class="col-12 m-0">
 
-                    <div class="col-md-12 my-4 p-2">
+                    <div class="col-md-12 my-2 p-3 border rounded-xl">
                       <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Renault Sandero</h6>
                       <span class="fs-4 fw-bold"> R$ 575,99 <small class="text-sm text-muted">vence em 10 dias</small></span>
                       <div class="progress mt-2" style="height: 10px; margin-bottom: 0;border-radius: 100px;">
@@ -481,9 +489,7 @@
                       </div>
                     </div>
 
-                    <hr class="my-0 mx-2" style="opacity: .04;">
-
-                    <div class="col-md-12 my-4 p-2">
+                    <div class="col-md-12 my-2 p-3 border rounded-xl">
                       <h6 class="mb-2 text-muted"><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24"><path d="M23.121,9.069,15.536,1.483a5.008,5.008,0,0,0-7.072,0L.879,9.069A2.978,2.978,0,0,0,0,11.19v9.817a3,3,0,0,0,3,3H21a3,3,0,0,0,3-3V11.19A2.978,2.978,0,0,0,23.121,9.069ZM15,22.007H9V18.073a3,3,0,0,1,6,0Zm7-1a1,1,0,0,1-1,1H17V18.073a5,5,0,0,0-10,0v3.934H3a1,1,0,0,1-1-1V11.19a1.008,1.008,0,0,1,.293-.707L9.878,2.9a3.008,3.008,0,0,1,4.244,0l7.585,7.586A1.008,1.008,0,0,1,22,11.19Z"/></svg> Apartamento</h6>
                       <span class="fs-4 fw-bold"> R$ 320,76 <small class="text-sm text-muted">vence em 25 dias</small></span>
                       <div class="progress mt-2" style="height: 10px; margin-bottom: 0;border-radius: 100px;">
@@ -503,74 +509,87 @@
               </div>
             </div>
           </div>
-          <div class="col-12 col-md-3">
-            <div class="card border-0 shadow-sm rounded-xl h-100">
-              <div class="card-header border-0 text-muted bg-white rounded-xl pt-3 px-4">
-                <div class="d-flex justify-content-between">
-                  <h4 class="text-sm text-uppercase">Meus limites</h4> 
-                  <a class="link-secondary text-right fs-6" href="#" aria-label="Add a new report">
-                    <i class="bi bi-plus-circle"></i>
-                  </a>
+          <div class="col-12 col-md-3 animate__animated animate__fadeInUp animate__delay-1s">
+            <div class="p-3 bg-body rounded shadow-sm rounded-xl h-100">
+              <h6 class="pb-2 mb-0">Meus limites</h6>
+              <div class="d-flex text-muted pt-3">
+                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#4C9A62"></rect><text x="50%" y="50%" fill="#4C9A62" dy=".3em">32x32</text></svg>
+
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                  <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Mercado</strong>
+                    <a href="#">Follow</a>
+                  </div>
+                  <span class="d-block">
+                    <div class="progress mt-2" style="height: 6px; margin-bottom: 0;border-radius: 100px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 22%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                  </span>
                 </div>
               </div>
-              <div class="card-body py-0">
-                <div class="row g-2">
-                  <div class="col-12 m-0">
+              <div class="d-flex text-muted pt-3">
+                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#4C9A62"></rect><text x="50%" y="50%" fill="#4C9A62" dy=".3em">32x32</text></svg>
 
-                    <div class="col-md-12 my-1 p-2">
-                      <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Lazer</h6>
-                      <div class="progress mt-2" style="height: 8px; margin-bottom: 0;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                        <small class="text-left text-uppercase text-muted text-xs">R$ 00,00</small>
-                        <small class="text-right text-uppercase text-muted text-xs">R$ 1.200,00</small>
-                      </div>
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                  <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Pagamentos</strong>
+                    <a href="#">Follow</a>
+                  </div>
+                  <span class="d-block">
+                    <div class="progress mt-2" style="height: 6px; margin-bottom: 0;border-radius: 100px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 22%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
+                  </span>
+                </div>
+              </div>
+              <div class="d-flex text-muted pt-3">
+                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#4C9A62"></rect><text x="50%" y="50%" fill="#4C9A62" dy=".3em">32x32</text></svg>
 
-                    <hr class="my-0 mx-2" style="opacity: .04;">
-
-                    <div class="col-md-12 my-1 p-2">
-                      <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Lazer</h6>
-                      <div class="progress mt-2" style="height: 8px; margin-bottom: 0;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                        <small class="text-left text-uppercase text-muted text-xs">R$ 00,00</small>
-                        <small class="text-right text-uppercase text-muted text-xs">R$ 1.200,00</small>
-                      </div>
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                  <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Transferências</strong>
+                    <a href="#">Follow</a>
+                  </div>
+                  <span class="d-block">
+                    <div class="progress mt-2" style="height: 6px; margin-bottom: 0;border-radius: 100px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 22%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
+                  </span>
+                </div>
+              </div>
+              <div class="d-flex text-muted pt-3">
+                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#4C9A62"></rect><text x="50%" y="50%" fill="#4C9A62" dy=".3em">32x32</text></svg>
 
-                    <hr class="my-0 mx-2" style="opacity: .04;">
-
-                    <div class="col-md-12 my-1 p-2">
-                      <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Lazer</h6>
-                      <div class="progress mt-2" style="height: 8px; margin-bottom: 0;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                        <small class="text-left text-uppercase text-muted text-xs">R$ 00,00</small>
-                        <small class="text-right text-uppercase text-muted text-xs">R$ 1.200,00</small>
-                      </div>
+                <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
+                  <div class="d-flex justify-content-between">
+                    <strong class="text-gray-dark">Lazer</strong>
+                    <a href="#">Follow</a>
+                  </div>
+                  <span class="d-block">
+                    <div class="progress mt-2" style="height: 6px; margin-bottom: 0;border-radius: 100px;">
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 22%;" aria-valuenow="22" aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
-
-                    <hr class="my-0 mx-2" style="opacity: .04;">
-
-                    <div class="col-md-12 my-1 p-2">
-                      <h6 class="mb-2 text-muted "><svg style="margin-top:-3px;margin-right: 3px;" fill="#6C757E" width="16px" height="16px" xmlns="http://www.w3.org/2000/svg" id="Layer_1" data-name="Layer 1" viewBox="0 0 24 24"><path d="M20.389,3.3A3.512,3.512,0,0,0,17.1,1H6.9A3.493,3.493,0,0,0,3.628,3.263L1.469,8.7A24.288,24.288,0,0,0,0,17.032V20H3v3H7V20H17v3h4V20h3V17.032a24.349,24.349,0,0,0-1.484-8.375ZM17,15.5h0A1.5,1.5,0,0,1,18.5,14h0A1.5,1.5,0,0,1,20,15.5h0A1.5,1.5,0,0,1,18.5,17h0A1.5,1.5,0,0,1,17,15.5ZM4.271,9.765,6.432,4.329A.5.5,0,0,1,6.9,4H17.1a.52.52,0,0,1,.485.37l2.128,5.354c.153.421.285.847.406,1.276H3.878C4,10.584,4.124,10.171,4.271,9.765ZM5.5,17h0A1.5,1.5,0,0,1,4,15.5H4A1.5,1.5,0,0,1,5.5,14h0A1.5,1.5,0,0,1,7,15.5H7A1.5,1.5,0,0,1,5.5,17Z"/></svg> Lazer</h6>
-                      <div class="progress mt-2" style="height: 8px; margin-bottom: 0;">
-                        <div class="progress-bar bg-success" role="progressbar" style="width: 10%;" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
-                      </div>
-                      <div class="d-flex justify-content-between">
-                        <small class="text-left text-uppercase text-muted text-xs">R$ 00,00</small>
-                        <small class="text-right text-uppercase text-muted text-xs">R$ 1.200,00</small>
-                      </div>
-                    </div>
-
+                  </span>
+                </div>
+              </div>
+              <small class="d-block text-end mt-4">
+                <a href="#" id="liveToastBtn">Adicionar novo limite</a>
+              </small>
+              <div class="position-fixed top-0 end-0 p-3 rounded-xl" style="z-index: 11">
+                <div id="liveToast" class="toast rounded-xl" role="alert" aria-live="assertive" aria-atomic="true">
+                  <div class="toast-header rounded-xl border-0">
+                    <svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#4C9A62"></rect></svg>
+                    <strong class="me-auto">Obrigado por testar 😉</strong>
+                    <small>agora</small>
+                    <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                  </div>
+                  <div class="toast-body">
+                    Este é um sistema em desenvolvimento, nenhuma ação foi executada.
                   </div>
                 </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
@@ -593,6 +612,16 @@
     $('body').delay(150).css({'overflow': 'visible'});
   })
 </script>
+<script type="text/javascript">
+  var toastTrigger = document.getElementById('liveToastBtn')
+  var toastLiveExample = document.getElementById('liveToast')
+  if (toastTrigger) {
+    toastTrigger.addEventListener('click', function () {
+      var toast = new bootstrap.Toast(toastLiveExample)
 
+      toast.show()
+    })
+  }
+</script>
 </body>
 </html>
