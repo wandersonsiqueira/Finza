@@ -7,7 +7,7 @@
     <meta name="description" content="">
     <meta name="author" content="Wandeson Siqueira">
     <meta name="generator" content="W3">
-    <title>Cadastrar Entrada - Gestor</title>
+    <title>Cadastrar DespesaÏ - Gestor</title>
 
     <link rel="canonical" href="/">
 
@@ -48,7 +48,7 @@
 
 
     <!-- Custom styles for this template -->
-    <link href="./custom.css" rel="stylesheet">
+    <link href="../custom.css" rel="stylesheet">
   </head>
   <body>
 
@@ -185,7 +185,7 @@
           <div class="row">
             <div class="col-12 col-md-6">
               <h1 class="fw-bold h5">
-                <a href="#" onclick="history.go(-1)"><span class="text-muted me-3"><i class="bi bi-arrow-left-circle"></i></span></a> Cadastrar nova entrada
+                <a href="#" onclick="history.go(-1)"><span class="text-muted me-3"><i class="bi bi-arrow-left-circle"></i></span></a> Cadastrar nova saída
               </h1>
             </div>
             <div class="col-6">
@@ -198,7 +198,7 @@
             <div class="col-12 col-md-6">
 
               <div class="mt-2 mb-5">
-                <h6>Quanto entrou?</h6>
+                <h6>Quanto saiu?</h6>
                 <div class="input-group mb-3">
                   <span class="input-group-text me-2 text-muted" id="basic-addon1" style="border: 0;font-size: 20px;padding: 7px 0 0;background:transparent;">R$</span>
                   <input type="text" class="form-control money fw-bold" id="money" placeholder="00,00" aria-label="00,00" aria-describedby="basic-addon1"  style="border: 0;font-size: 30px;padding: 0;">
@@ -207,20 +207,20 @@
 
 
               <div class="my-4">
-                <label for="incomeDescription" class="form-label h6 mb-0">Descrição</label>
-                <input type="text" class="form-control" id="incomeDescription" placeholder="Ex: Recebimento de salário" value="">
+                <label for="expenseDescription" class="form-label h6 mb-0">Descrição</label>
+                <input type="text" class="form-control" id="expenseDescription" placeholder="Ex: Pagamento de aluguel" value="">
               </div>
 
               <div class="my-md-5">
                 <div class="row g-4">
                   <div class="col-md-7">
-                    <label for="incomeDayofPayement" class="form-label h6 mb-0">Recebido dia</label>
-                    <input type="date" class="form-control" id="incomeDayofPayement" value="DD/MM/AAAA" placeholder="DD/MM/AAAA">
+                    <label for="expenseDayofPayement" class="form-label h6 mb-0">Gasto dia</label>
+                    <input type="date" class="form-control" id="expenseDayofPayement" value="">
                   </div>
 
                   <div class="col-md-5">
-                    <label for="incomeRecurring" class="form-label h6 mb-0">Se repete</label>
-                    <select class="form-select" id="incomeRecurring">
+                    <label for="expenseRecurring" class="form-label h6 mb-0">Se repete</label>
+                    <select class="form-select" id="expenseRecurring">
                       <option selected>Nunca</option>
                       <option value="1">Todo dia</option>
                       <option value="2">Semanalmente</option>
@@ -237,8 +237,8 @@
               <div class="my-md-5">
                 <div class="row g-4">
                   <div class="col-md-7 mt-5 mt-md-0">
-                    <label for="incomePaymentMethod" class="form-label h6 mb-0">Recebido via</label>
-                    <select class="form-select" id="incomePaymentMethod">
+                    <label for="expensePaymentMethod" class="form-label h6 mb-0">Gasto via</label>
+                    <select class="form-select" id="expensePaymentMethod">
                       <option selected>Pix</option>
                       <option value="1">Boleto Bancário</option>
                       <option value="2">Transferência tipo TED/TEF</option>
@@ -250,24 +250,24 @@
                   </div>
 
                   <div class="col-md-5">
-                    <label for="incomeCategory" class="form-label h6 mb-0">Categoria</label>
-                    <select class="form-select" id="incomeCategory">
-                      <option selected>Salário</option>
-                      <option value="1">Prestação de Serviços</option>
-                      <option value="2">Investimentos</option>
-                      <option value="3">Empréstimos</option>
-                      <option value="4">Bônus/PLR</option>
-                      <option value="5">Pró Labore</option>
-                      <option value="6">Proventos</option>
-                      <option value="7">Dividendos</option>
-                      <option value="8">Presente</option>
+                    <label for="expenseCategory" class="form-label h6 mb-0">Categoria</label>
+                    <select class="form-select" id="expenseCategory">
+                      <option selected>Pagamentos</option>
+                      <option value="1">Educação</option>
+                      <option value="2">Compras</option>
+                      <option value="3">Saúde</option>
+                      <option value="4">Mercado</option>
+                      <option value="5">Transporte</option>
+                      <option value="5">Alimentação</option>
+                      <option value="6">Lazer</option>
+                      <option value="6">Aluguel</option>
                     </select>
                   </div>
                 </div>
               </div>
-              
+
               <div class="mt-5">
-                <button class="w-100 btn btn-success btn-lg rounded-xl" type="submit" id="liveToastBtn">Cadastrar entrada</button>
+                <button class="w-100 btn btn-danger btn-lg rounded-xl" type="submit" id="liveToastBtn">Cadastrar despesa</button>
               </div>
             </div>
 
@@ -311,7 +311,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script src="./jquery.mask.js"></script>
+  <script src="../jquery.mask.js"></script>
   <script src="https://igorescobar.github.io/jQuery-Mask-Plugin/js/examples.js" type="text/javascript"></script>
 
   <script type="text/javascript">
