@@ -5,11 +5,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.88.1">
+    <meta name="author" content="Wandeson Siqueira">
+    <meta name="generator" content="W3">
     <title>Gestor</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/dashboard/">
+    <link rel="canonical" href="/">
 
 
     <!-- CSS only -->
@@ -29,31 +29,6 @@
 
 
     <style>
-      body{
-        background: #EDEDED;
-        font-family: font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" sans-serif;
-        font-size: 17px;
-        line-height: 1.47059;
-        font-weight: 500;
-        letter-spacing: .0009rem;
-      }
-      a {
-        color: #4C9A62;
-      }
-      h1, .h1, h2, .h2 {
-        letter-spacing: -.039rem;
-      }
-      .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, button, .btn {
-        font-weight: 600;
-      }
-      body, input, textarea, select, button, html, h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, p, span {
-        font-synthesis: none;
-        -moz-font-feature-settings: 'kern';
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        direction: ltr;
-        text-align: left;
-      }
       .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -67,121 +42,6 @@
           font-size: 3.5rem;
         }
       }
-      .bg-transparent {
-        background: transparent!important; 
-      }
-      .sidebar {
-        box-shadow: inset -1px 0 0 rgb(0 0 0 / 0%) !important;
-      }
-      .fw-medium {
-        font-weight: 500 !important;
-      }
-      .text-muted{
-        color: #C5C5C5;
-      }
-      .rounded-xl{
-        border-radius: 13px !important;
-      }
-      .dropdown-menu-macos {
-        display: grid;
-        gap: 0.25rem;
-        padding: 0.5rem;
-        border-radius: 0.5rem;
-      }
-      .font-weight-bolder, .font-weight-bold {
-        font-weight: 700!important;
-      }
-      .text-sm {
-        font-size: .875rem!important;
-      }
-      .text-sm {
-        line-height: 1.5;
-      }
-
-      .text-xs {
-        font-size: .775rem!important;
-      }
-
-.toast {
-      -webkit-backdrop-filter: saturate(180%) blur(20px);
-    backdrop-filter: saturate(180%) blur(20px);
-    background-color: rgba(255,255,255,0.72);
-}
-@media (max-width: 768px){
-.toast {
-    width: 100%;
-    }
-  }
-
-
-
-
-      body {
-        overflow: hidden; 
-      }
-
-/* ini: Preloader */
-
-#preloader {
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  bottom:0;
-  background-color:#6FD30B; /* cor do background que vai ocupar o body */
-  z-index:999; /* z-index para jogar para frente e sobrepor tudo */
-}
-#preloader .inner {
-  position: absolute;
-  top: 50%; /* centralizar a parte interna do preload (onde fica a animação)*/
-  left: 50%;
-  transform: translate(-50%, -50%);  
-}
-.bolas > div {
-  display: inline-block;
-  background-color: #fff;
-  width: 17px;
-  height: 17px;
-  border-radius: 100%;
-  margin: 3px;
-  -webkit-animation-fill-mode: both;
-  animation-fill-mode: both;
-  animation-name: animarBola;
-  animation-timing-function: linear;
-  animation-iteration-count: infinite;
-
-}
-.bolas > div:nth-child(1) {
-  animation-duration:0.75s ;
-  animation-delay: 0;
-}
-.bolas > div:nth-child(2) {
-  animation-duration: 0.75s ;
-  animation-delay: 0.12s;
-}
-.bolas > div:nth-child(3) {
-  animation-duration: 0.75s  ;
-  animation-delay: 0.24s;
-}
-
-@keyframes animarBola {
-  0% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1;
-  }
-  16% {
-    -webkit-transform: scale(0.1);
-    transform: scale(0.1);
-    opacity: 0.7;
-  }
-  33% {
-    -webkit-transform: scale(1);
-    transform: scale(1);
-    opacity: 1; 
-  } 
-}
-/* end: Preloader */
 
 :root {
   --animate-delay: 0.5s;
@@ -189,8 +49,8 @@
 </style>
 
 
-<!-- Custom styles for this template -->
-<link href="https://getbootstrap.com/docs/5.1/examples/dashboard/dashboard.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="./custom.css" rel="stylesheet">
 </head>
 <body>
 
@@ -568,7 +428,9 @@
                 </div>
               </div>
               <div class="d-flex text-muted pt-3">
-                <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#4C9A62"></rect><text x="50%" y="50%" fill="#4C9A62" dy=".3em">32x32</text></svg>
+                <div class="icon-square rounded p-1 bg-light text-dark d-inline-flex align-items-center justify-content-center fs-5 flex-shrink-0 me-3">
+          <i class="bi bi-cart"></i>
+        </div>
 
                 <div class="pb-3 mb-0 small lh-sm border-bottom w-100">
                   <div class="d-flex justify-content-between">
