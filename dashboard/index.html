@@ -12,17 +12,17 @@
     <link rel="canonical" href="/">
 
 
-<!-- Hotjar Tracking Code for https://finza.criazo.com.br/dashboard/ -->
-<script>
-    (function(h,o,t,j,a,r){
+    <!-- Hotjar Tracking Code for https://finza.criazo.com.br/dashboard/ -->
+    <script>
+      (function(h,o,t,j,a,r){
         h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
         h._hjSettings={hjid:2970274,hjsv:6};
         a=o.getElementsByTagName('head')[0];
         r=o.createElement('script');r.async=1;
         r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
         a.appendChild(r);
-    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
-</script>
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
 
     <!-- CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -196,15 +196,42 @@
       <main class="col-md-9 ms-sm-auto col-lg-10 px-0 px-md-4 pt-3 pb-5">
 
         <div class="container-fluid my-4">
+
+          <div class="alert alert-success alert-dismissible fade show mb-5" role="alert">
+            Olá, tudo bem?<br>
+            Agradecemos por testar nosso protótipo.<br><br>
+            Você pode simular a inserção de novas despesas, novas receitas, e um novo financiamento para entender como a Finza pode te ajudar a melhorar seus hábitos financeiros e fazer seu dinheiro além de sobrar, render cada vez mais.<br><br>
+            <strong>Nenhum dado aqui inserido será enviado, é tudo apenas um teste de experiência do aplicativo.</strong><br>
+            <button type="button" class="btn btn-success mt-3" data-bs-dismiss="alert" aria-label="Close">Entendi, fechar e testar!</button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>
+
+
           <div class="row">
             <div class="col-6 col-md-6">
               <h2 class="fw-bold">
                 <span class="text-muted">Bom dia, </span>
-                Wanderson
+                Usuário Testes
               </h2>
             </div>
-            <div class="col-6">
-              <h1 class="fw-bolder text-success text-end">finza</h1>
+            <div class="col-6 text-end">
+              <a href="#" class="fw-bolder text-success text-end h1" id="avisoUSERbtn">finza</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="toast-container position-fixed top-0 end-0 p-3 rounded-xl" style="z-index:999999;">
+          <div id="avisoUSER" class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
+            <div class="toast-header">
+              <svg class="bd-placeholder-img rounded me-2" width="20" height="20" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#4C9A62"></rect></svg>
+              <strong class="me-auto">Finza - Gestão Inteligente</strong>
+              <small>Agora</small>
+              <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+              Olá, tudo bem?<br>
+              Agradecemos por testar nosso protótipo.<br><br>
+              <strong>Você pode simular a inserção de novas despesas, novas receitas, e um novo financiamento para entender como a Finza pode te ajudar a melhorar seus hábitos financeiros e fazer seu dinheiro além de sobrar, render cada vez mais.</strong>
             </div>
           </div>
         </div>
@@ -223,7 +250,7 @@
                       <h6 class="fw-normal" style="font-size: 15px;"><svg style="margin-top: -1px;" fill="#979797" xmlns="http://www.w3.org/2000/svg" id="Bold" viewBox="0 0 24 24" width="12"><path d="M5.5,21A2.5,2.5,0,0,1,3,18.5V1.5A1.5,1.5,0,0,0,1.5,0h0A1.5,1.5,0,0,0,0,1.5v17A5.5,5.5,0,0,0,5.5,24h17A1.5,1.5,0,0,0,24,22.5h0A1.5,1.5,0,0,0,22.5,21Z"></path><path d="M19.5,18A1.5,1.5,0,0,0,21,16.5v-6a1.5,1.5,0,0,0-3,0v6A1.5,1.5,0,0,0,19.5,18Z"></path><path d="M7.5,18A1.5,1.5,0,0,0,9,16.5v-6a1.5,1.5,0,0,0-3,0v6A1.5,1.5,0,0,0,7.5,18Z"></path><path d="M13.5,18A1.5,1.5,0,0,0,15,16.5V5.5a1.5,1.5,0,0,0-3,0v11A1.5,1.5,0,0,0,13.5,18Z"></path></svg> entrou <span class="text-success font-weight-bolder">+R$ 1.361,00</span> a mais este mês</h6>
                     </div>
 
-                    <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0">
+                    <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0 d-none d-md-block">
                       <button onclick="window.location.href='/new-income'" class="rounded-xl btn py-2 px-md-3" style="background:#f5f5f5;">
                         <p>💰</p>
                         <p class="text-sm mb-0 fw-bold">Adicionar<br>
@@ -244,6 +271,32 @@
                 </div>
               </div>
             </div>
+
+            <div class="col-12 col-md-6 text-md-end mt-4 mt-md-0 d-block d-md-none">
+              <div class="row g-3">
+                <div class="col">
+                  <button onclick="window.location.href='/new-income'" class="rounded-xl btn py-2 px-md-3 w-100" style="background:#d7d7d7;">
+                    <p>💰</p>
+                    <p class="text-sm mb-0 fw-bold">Adicionar<br>
+                    entrada</p>
+                  </button>
+                </div>
+                <div class="col">
+                  <button onclick="window.location.href='/new-expense'" class="rounded-xl btn py-2 px-md-3 w-100" style="background:#d7d7d7;">
+                    <p>💸</p>
+                    <p class="text-sm mb-0 fw-bold">Cadastrar<br>
+                    despesa</p>
+                  </button>
+                </div>
+                <div class="col">
+                  <button class="rounded-xl btn py-2 px-md-3 w-100" style="background:#d7d7d7;">
+                    <p>💳</p>
+                    <p class="text-sm mb-0 fw-bold">Compra<br>parcelada</p>
+                  </button>
+                </div>
+              </div>
+            </div>
+
             <div class="col-12 col-md-8 mt-3 d-none">
               <div class="card p-3 border-0 shadow-sm rounded-xl h-100">
                 <div class="card-body">
@@ -473,6 +526,8 @@
     </div>
   </div>
 
+
+
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
@@ -486,9 +541,10 @@
       $('body').delay(150).css({'overflow': 'visible'});
     })
   </script>
+
   <script type="text/javascript">
-    var toastTrigger = document.getElementById('liveToastBtn')
-    var toastLiveExample = document.getElementById('liveToast')
+    var toastTrigger = document.getElementById('avisoUSERbtn')
+    var toastLiveExample = document.getElementById('avisoUSER')
     if (toastTrigger) {
       toastTrigger.addEventListener('click', function () {
         var toast = new bootstrap.Toast(toastLiveExample)
@@ -497,5 +553,6 @@
       })
     }
   </script>
+
 </body>
 </html>
